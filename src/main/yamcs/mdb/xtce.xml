@@ -1,182 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SpaceSystem name="myproject" 
-    xmlns="http://www.omg.org/spec/XTCE/20180204" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.omg.org/spec/XTCE/20180204 https://www.omg.org/spec/XTCE/20180204/SpaceSystem.xsd">
+<SpaceSystem name = "SPOC">
     <TelemetryMetaData>
         <ParameterTypeSet>
-            <AggregateParameterType name="CCSDS_Packet_ID_Type">
-                <MemberList>
-                    <Member name="Version" typeRef="CCSDSVersionType" />
-                    <Member name="Type" typeRef="CCSDSTypeType" />
-                    <Member name="SecHdrFlag" typeRef="CCSDSSecHdrFlagType" />
-                    <Member name="APID" typeRef="CCSDSAPIDType" />
-                </MemberList>
-            </AggregateParameterType>
-            <AggregateParameterType name="CCSDS_Packet_Sequence_Type">
-                <MemberList>
-                    <Member name="GroupFlags" typeRef="CCSDSGroupFlagsType" />
-                    <Member name="Count" typeRef="CCSDSSourceSequenceCountType" />
-                </MemberList>
-            </AggregateParameterType>
-            <IntegerParameterType name="CCSDSVersionType" signed="false" initialValue="0">
+            <IntegerParameterType name="bit1_t">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="1" />
+            </IntegerParameterType>
+            <IntegerParameterType name="ui10_t" signed="false">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="10" />
+            </IntegerParameterType>
+            <IntegerParameterType name="ui8_t" signed="false">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="10" />
+            </IntegerParameterType>
+            <IntegerParameterType name="ui16_t" signed="false">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="16" />
+            </IntegerParameterType>
+            <IntegerParameterType name="ui12_t" signed="false">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="12" />
+            </IntegerParameterType>
+            <IntegerParameterType name="i8_t" signed="true">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="8" />
+            </IntegerParameterType>
+            <IntegerParameterType name="ui13_t" signed="false">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="13" />
+            </IntegerParameterType>
+            <IntegerParameterType name="i16_t" signed="true">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="16" />
+            </IntegerParameterType>
+            <IntegerParameterType name="bit3_t">
                 <UnitSet/>
                 <IntegerDataEncoding sizeInBits="3" />
             </IntegerParameterType>
-            <BooleanParameterType name="CCSDSTypeType" zeroStringValue="TM" oneStringValue="TC">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="1" />
-            </BooleanParameterType>
-            <BooleanParameterType name="CCSDSSecHdrFlagType" zeroStringValue="NotPresent" oneStringValue="Present">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="1" />
-            </BooleanParameterType>
-            <IntegerParameterType name="CCSDSAPIDType" signed="false">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="11" />
-            </IntegerParameterType>
-            <EnumeratedParameterType name="CCSDSGroupFlagsType" initialValue="Standalone">
+            <IntegerParameterType name="bit2_t">
                 <UnitSet/>
                 <IntegerDataEncoding sizeInBits="2" />
-                <EnumerationList>
-                    <Enumeration value="0" label="Continuation" />
-                    <Enumeration value="1" label="First" />
-                    <Enumeration value="2" label="Last" />
-                    <Enumeration value="3" label="Standalone" />
-                </EnumerationList>
-            </EnumeratedParameterType>
-            <IntegerParameterType name="CCSDSSourceSequenceCountType" signed="false">
+            </IntegerParameterType>
+            <IntegerParameterType name="i12_t" signed="true">
                 <UnitSet/>
-                <IntegerDataEncoding sizeInBits="14" />
+                <IntegerDataEncoding sizeInBits="12" />
             </IntegerParameterType>
-            <IntegerParameterType name="CCSDSPacketLengthType" signed="false">
-                <UnitSet>
-                    <Unit description="Size">Octets</Unit>
-                </UnitSet>
-                <IntegerDataEncoding sizeInBits="16" />
-            </IntegerParameterType>
-            <IntegerParameterType name="uint32_t" signed="false">
+            <IntegerParameterType name="bit10_t">
                 <UnitSet/>
-                <IntegerDataEncoding encoding="unsigned" sizeInBits="32" />
+                <IntegerDataEncoding sizeInBits="10" />
             </IntegerParameterType>
-            <FloatParameterType name="float_t">
-                <UnitSet />
-                <FloatDataEncoding sizeInBits="32" />
-            </FloatParameterType>
-            <BooleanParameterType name="bool_t">
-                <UnitSet />
-                <IntegerDataEncoding sizeInBits="8" />
-            </BooleanParameterType>
-            <AggregateParameterType name="vec3_t">
-                <MemberList>
-                    <Member name="x" typeRef="float_t" />
-                    <Member name="y" typeRef="float_t" />
-                    <Member name="z" typeRef="float_t" />
-                </MemberList>
-            </AggregateParameterType>
         </ParameterTypeSet>
         <ParameterSet>
-            <Parameter name="CCSDS_Packet_ID" parameterTypeRef="CCSDS_Packet_ID_Type" />
-            <Parameter name="CCSDS_Packet_Sequence" parameterTypeRef="CCSDS_Packet_Sequence_Type" />
-            <Parameter name="CCSDS_Packet_Length" parameterTypeRef="CCSDSPacketLengthType" />
-            <Parameter name="EpochUSNO" parameterTypeRef="float_t" />
-            <Parameter name="OrbitNumberCumulative" parameterTypeRef="uint32_t" />
-            <Parameter name="ElapsedSeconds" parameterTypeRef="uint32_t" />
-            <Parameter name="A" parameterTypeRef="float_t" />
-            <Parameter name="Height" parameterTypeRef="float_t" />
-            <Parameter name="Position" parameterTypeRef="vec3_t" />
-            <Parameter name="Velocity" parameterTypeRef="vec3_t" />
-            <Parameter name="Latitude" parameterTypeRef="float_t" />
-            <Parameter name="Longitude" parameterTypeRef="float_t" />
-            <Parameter name="Battery1_Voltage" parameterTypeRef="float_t" />
-            <Parameter name="Battery2_Voltage" parameterTypeRef="float_t" />
-            <Parameter name="Battery1_Temp" parameterTypeRef="float_t" />
-            <Parameter name="Battery2_Temp" parameterTypeRef="float_t" />
-            <Parameter name="Magnetometer" parameterTypeRef="vec3_t" />
-            <Parameter name="Sunsensor" parameterTypeRef="float_t" />
-            <Parameter name="Gyro" parameterTypeRef="vec3_t" />
-            <Parameter name="Detector_Temp" parameterTypeRef="float_t" />
-            <Parameter name="Shadow" parameterTypeRef="bool_t" />
-            <Parameter name="Contact_Golbasi_GS" parameterTypeRef="bool_t" />
-            <Parameter name="Contact_Svalbard" parameterTypeRef="bool_t" />
-            <Parameter name="Payload_Status" parameterTypeRef="bool_t" />
-            <Parameter name="Payload_Error_Flag" parameterTypeRef="bool_t" />
-            <Parameter name="ADCS_Error_Flag" parameterTypeRef="bool_t" />
-            <Parameter name="CDHS_Error_Flag" parameterTypeRef="bool_t" />
-            <Parameter name="COMMS_Error_Flag" parameterTypeRef="bool_t" />
-            <Parameter name="EPS_Error_Flag" parameterTypeRef="bool_t" />
-            <Parameter name="COMMS_Status" parameterTypeRef="bool_t" />
-            <Parameter name="CDHS_Status" parameterTypeRef="bool_t" />
-            <Parameter name="Mode_Night" parameterTypeRef="bool_t" />
-            <Parameter name="Mode_Day" parameterTypeRef="bool_t" />
-            <Parameter name="Mode_Payload" parameterTypeRef="bool_t" />
-            <Parameter name="Mode_XBand" parameterTypeRef="bool_t" />
-            <Parameter name="Mode_SBand" parameterTypeRef="bool_t" />
-            <Parameter name="Mode_Safe" parameterTypeRef="bool_t" />
+            <Parameter name="BAT.BatteryCurrentDir" parameterTypeRef="bit1_t" />
+            <Parameter name="BAT.BatteryCurrent" parameterTypeRef="ui10_t" />
+            <Parameter name="BAT.BatteryVoltage" parameterTypeRef="ui10_t" />
+            <Parameter name="BAT.BoardTemperature" parameterTypeRef="ui10_t" />
+            <Parameter name="BAT.BatteryHeaterStatus" parameterTypeRef="ui10_t" />
+            <Parameter name="BAT.status" parameterTypeRef="ui16_t" />
+            <Parameter name="BAT.LastError" parameterTypeRef="ui8_t" />
+            <Parameter name="CMC.txPacketCount" parameterTypeRef="ui16_t" />
+            <Parameter name="CMC.rxRssi" parameterTypeRef="ui12_t" />
+            <Parameter name="CMC.rxFrameCount" parameterTypeRef="ui16_t" />
+            <Parameter name="CMC.rxPacketCount" parameterTypeRef="ui16_t" />
+            <Parameter name="CMC.temperatureSmps" parameterTypeRef="ui8_t" />
+            <Parameter name="CMC.temperaturePa" parameterTypeRef="ui8_t" />
+            <Parameter name="CMC.voltage3V3" parameterTypeRef="ui13_t" />
+            <Parameter name="CMC.voltage5V" parameterTypeRef="ui13_t" />
+            <Parameter name="CMC.current3V3" parameterTypeRef="ui16_t" />
+            <Parameter name="CMC.current5V" parameterTypeRef="ui16_t" />
         </ParameterSet>
         <ContainerSet>
-            <SequenceContainer abstract="true" name="CCSDSPacket">
+            <SequenceContainer name="BAT">
                 <EntryList>
-                    <ParameterRefEntry parameterRef="CCSDS_Packet_ID" />
-                    <ParameterRefEntry parameterRef="CCSDS_Packet_Sequence" />
-                    <ParameterRefEntry parameterRef="CCSDS_Packet_Length" />
+                    <ParameterRefEntry parameterRef="BAT.BatteryCurrentDir">
+                        <LocationInContainerInBits referenceLocation="containerStart" />
+                    </ParameterRefEntry>
+                    <ParameterRefEntry parameterRef="BAT.BatteryCurrent">
+                        <LocationInContainerInBits referenceLocation="containerStart" />
+                    </ParameterRefEntry>
+                    <ParameterRefEntry parameterRef="BAT.BatteryVoltage">
+                        <LocationInContainerInBits referenceLocation="containerStart" />
+                    </ParameterRefEntry>
+                    <ParameterRefEntry parameterRef="BAT.BoardTemperature">
+                        <LocationInContainerInBits referenceLocation="containerStart" />
+                    </ParameterRefEntry>
+                    <ParameterRefEntry parameterRef="BAT.BatteryHeaterStatus">
+                        <LocationInContainerInBits referenceLocation="containerStart" />
+                    </ParameterRefEntry>
+                    <ParameterRefEntry parameterRef="BAT.status">
+                        <LocationInContainerInBits referenceLocation="containerStart" />
+                    </ParameterRefEntry>
+                    <ParameterRefEntry parameterRef="BAT.LastError">
+                        <LocationInContainerInBits referenceLocation="containerStart" />
+                    </ParameterRefEntry>
                 </EntryList>
             </SequenceContainer>
-            <SequenceContainer name="TelemetryPacket">
-                <EntryList />
-                <BaseContainer containerRef="CCSDSPacket">
-                    <RestrictionCriteria>
-                        <ComparisonList>
-                            <Comparison value="0" parameterRef="CCSDS_Packet_ID/Version" />
-                            <Comparison value="TM" parameterRef="CCSDS_Packet_ID/Type" />
-                        </ComparisonList>
-                    </RestrictionCriteria>
-                </BaseContainer>
-            </SequenceContainer>
-            <SequenceContainer name="Spacecraft">
+            <SequenceContainer name="COMMS">
                 <EntryList>
-                    <ParameterRefEntry parameterRef="EpochUSNO" />
-                    <ParameterRefEntry parameterRef="OrbitNumberCumulative" />
-                    <ParameterRefEntry parameterRef="ElapsedSeconds" />
-                    <ParameterRefEntry parameterRef="A" />
-                    <ParameterRefEntry parameterRef="Height" />
-                    <ParameterRefEntry parameterRef="Position" />
-                    <ParameterRefEntry parameterRef="Velocity" />
-                    <ParameterRefEntry parameterRef="Latitude" />
-                    <ParameterRefEntry parameterRef="Longitude" />
-                    <ParameterRefEntry parameterRef="Battery1_Voltage" />
-                    <ParameterRefEntry parameterRef="Battery2_Voltage" />
-                    <ParameterRefEntry parameterRef="Battery1_Temp" />
-                    <ParameterRefEntry parameterRef="Battery2_Temp" />
-                    <ParameterRefEntry parameterRef="Magnetometer" />
-                    <ParameterRefEntry parameterRef="Sunsensor" />
-                    <ParameterRefEntry parameterRef="Gyro" />
-                    <ParameterRefEntry parameterRef="Detector_Temp" />
-                    <ParameterRefEntry parameterRef="Shadow" />
-                    <ParameterRefEntry parameterRef="Contact_Golbasi_GS" />
-                    <ParameterRefEntry parameterRef="Contact_Svalbard" />
-                    <ParameterRefEntry parameterRef="Payload_Status" />
-                    <ParameterRefEntry parameterRef="Payload_Error_Flag" />
-                    <ParameterRefEntry parameterRef="ADCS_Error_Flag" />
-                    <ParameterRefEntry parameterRef="CDHS_Error_Flag" />
-                    <ParameterRefEntry parameterRef="COMMS_Error_Flag" />
-                    <ParameterRefEntry parameterRef="EPS_Error_Flag" />
-                    <ParameterRefEntry parameterRef="COMMS_Status" />
-                    <ParameterRefEntry parameterRef="CDHS_Status" />
-                    <ParameterRefEntry parameterRef="Mode_Night" />
-                    <ParameterRefEntry parameterRef="Mode_Day" />
-                    <ParameterRefEntry parameterRef="Mode_Payload" />
-                    <ParameterRefEntry parameterRef="Mode_XBand" />
-                    <ParameterRefEntry parameterRef="Mode_SBand" />
-                    <ParameterRefEntry parameterRef="Mode_Safe" />
+                    <ParameterRefEntry parameterRef="CMC.txPacketCount" />
+                    <ParameterRefEntry parameterRef="CMC.rxRssi" />
+                    <ParameterRefEntry parameterRef="CMC.rxFrameCount" />
                 </EntryList>
-                <BaseContainer containerRef="TelemetryPacket">
-                    <RestrictionCriteria>
-                        <ComparisonList>
-                            <Comparison value="NotPresent" parameterRef="CCSDS_Packet_ID/SecHdrFlag" />
-                            <Comparison value="100" parameterRef="CCSDS_Packet_ID/APID" />
-                        </ComparisonList>
-                    </RestrictionCriteria>
-                </BaseContainer>
             </SequenceContainer>
         </ContainerSet>
     </TelemetryMetaData>
