@@ -1,4 +1,4 @@
-package com.example.myproject;
+package edu.uga.smallsat;
 
 import java.nio.ByteBuffer;
 import java.util.HashMap;
@@ -10,11 +10,11 @@ import org.yamcs.YConfiguration;
 import org.yamcs.tctm.AbstractPacketPreprocessor;
 import org.yamcs.utils.TimeEncoding;
 
-public class MyPacketPreprocessor extends AbstractPacketPreprocessor {
+public class SPOCPacketPreprocessor extends AbstractPacketPreprocessor {
 
     private Map<Integer, AtomicInteger> seqCounts = new HashMap<>();
 
-    public MyPacketPreprocessor(String yamcsInstance) {
+    public SPOCPacketPreprocessor(String yamcsInstance) {
         super(yamcsInstance, YConfiguration.emptyConfig());
     }
 
