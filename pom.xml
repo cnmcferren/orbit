@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.uga.smallsat</groupId>
-  <artifactId>SSRL-COSMO</artifactId>
+  <artifactId>Orbit</artifactId>
   <version>0.0.1</version>
   <packaging>jar</packaging>
 
