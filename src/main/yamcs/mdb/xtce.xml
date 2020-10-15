@@ -1,291 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SpaceSystem name = "SPOC">
+<SpaceSystem name="SPOC"
+    xmlns="http://www.omg.org/spec/XTCE/20180204" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.omg.org/spec/XTCE/20180204 https://www.omg.org/spec/XTCE/20180204/SpaceSystem.xsd">
     <TelemetryMetaData>
         <ParameterTypeSet>
-            <IntegerParameterType name="bit1_t">
+            <BooleanParameterType name="bool" zeroStringValue="False" oneStringValue="True">
                 <UnitSet/>
                 <IntegerDataEncoding sizeInBits="1" />
-            </IntegerParameterType>
-            <IntegerParameterType name="ui10_t" signed="false">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="10" />
-            </IntegerParameterType>
-            <IntegerParameterType name="ui8_t" signed="false">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="10" />
-            </IntegerParameterType>
-            <IntegerParameterType name="ui16_t" signed="false">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="16" />
-            </IntegerParameterType>
-            <IntegerParameterType name="ui12_t" signed="false">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="12" />
-            </IntegerParameterType>
-            <IntegerParameterType name="i8_t" signed="true">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="8" />
-            </IntegerParameterType>
-            <IntegerParameterType name="ui13_t" signed="false">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="13" />
-            </IntegerParameterType>
-            <IntegerParameterType name="i16_t" signed="true">
-                <UnitSet/>
-                <IntegerDataEncoding sizeInBits="16" />
-            </IntegerParameterType>
-            <IntegerParameterType name="bit3_t">
+            </BooleanParameterType>
+            <IntegerParameterType name="uint_3" signed="false">
                 <UnitSet/>
                 <IntegerDataEncoding sizeInBits="3" />
             </IntegerParameterType>
-            <IntegerParameterType name="bit2_t">
+            <IntegerParameterType name="uint_8" signed="false">
                 <UnitSet/>
-                <IntegerDataEncoding sizeInBits="2" />
+                <IntegerDataEncoding sizeInBits="8" />
             </IntegerParameterType>
-            <IntegerParameterType name="i12_t" signed="true">
+            <IntegerParameterType name="int_8" signed="true">
                 <UnitSet/>
-                <IntegerDataEncoding sizeInBits="12" />
+                <IntegerDataEncoding sizeInBits="8" />
             </IntegerParameterType>
-            <IntegerParameterType name="bit10_t">
+            <IntegerParameterType name="uint_10" signed="false">
                 <UnitSet/>
                 <IntegerDataEncoding sizeInBits="10" />
             </IntegerParameterType>
+            <IntegerParameterType name="uint_16" signed="false">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="16" />
+            </IntegerParameterType>
+            <IntegerParameterType name="uint_32" signed="false">
+                <UnitSet/>
+                <IntegerDataEncoding sizeInBits="32" />
+            </IntegerParameterType>
         </ParameterTypeSet>
         <ParameterSet>
-            <Parameter name="BAT.BatteryCurrentDir" parameterTypeRef="bit1_t" />
-            <Parameter name="BAT.BatteryCurrent" parameterTypeRef="ui10_t" />
-            <Parameter name="BAT.BatteryVoltage" parameterTypeRef="ui10_t" />
-            <Parameter name="BAT.BoardTemperature" parameterTypeRef="ui10_t" />
-            <Parameter name="BAT.BatteryHeaterStatus" parameterTypeRef="ui10_t" />
-            <Parameter name="BAT.status" parameterTypeRef="ui16_t" />
-            <Parameter name="BAT.LastError" parameterTypeRef="ui8_t" />
-            <Parameter name="CMC.txPacketCount" parameterTypeRef="ui16_t" />
-            <Parameter name="CMC.rxRssi" parameterTypeRef="ui12_t" />
-            <Parameter name="CMC.rxFrameCount" parameterTypeRef="ui16_t" />
-            <Parameter name="CMC.rxPacketCount" parameterTypeRef="ui16_t" />
-            <Parameter name="CMC.temperatureSmps" parameterTypeRef="ui8_t" />
-            <Parameter name="CMC.temperaturePa" parameterTypeRef="ui8_t" />
-            <Parameter name="CMC.voltage3V3" parameterTypeRef="ui13_t" />
-            <Parameter name="CMC.voltage5V" parameterTypeRef="ui13_t" />
-            <Parameter name="CMC.current3V3" parameterTypeRef="ui16_t" />
-            <Parameter name="CMC.current5V" parameterTypeRef="ui16_t" />
-            <Parameter name="CMC.paReversePower" parameterTypeRef="ui12_t" />
-            <Parameter name="ISIS.status" parameterTypeRef="bit3_t" />
-            <Parameter name="ISIS.temperature" parameterTypeRef="ui10_t" />
-            <Parameter name="STX.status" parameterTypeRef="bit2_t" />
-            <Parameter name="STX.rfOutputPower" parameterTypeRef="ui12_t" />
-            <Parameter name="STX.powerAmplifierCurrent" parameterTypeRef="i16_t" />
-            <Parameter name="STX.powerAmplifierVoltage" parameterTypeRef="ui16_t" />
-            <Parameter name="STX.boardTemperature" parameterTypeRef="i12_t" />
-            <Parameter name="STX.batteryCurrent" parameterTypeRef="i16_t" />
-            <Parameter name="STX.batteryVoltage" parameterTypeRef="ui12_t" />
-            <Parameter name="EPS.actualSwitchStatesBitmap" parameterTypeRef="bit10_t" />
-            <Parameter name="EPS.BcrOutputCurrent" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.BcrOutputVoltage" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.busVoltages" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.busCurrents" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.switchVoltages" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.switchCurrents" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.boardTemperatures" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.solarArrayVoltages" parameterTypeRef="ui10_t" />
-            <Parameter name="EPS.solarArrayCurrents" parameterTypeRef="ui10_t" />
+            <Parameter name="OBC_currBootImage" parameterTypeRef="uint_8" />
+            <Parameter name="ModeManager_mode" parameterTypeRef="uint_3" />
+            <Parameter name="OBT_uptime" parameterTypeRef="uint_32" />
+            <Parameter name="BAT_batteryCurrentDir" parameterTypeRef="bool" />
+            <Parameter name="BAT_batteryCurrent_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryCurrent_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryCurrent_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryVoltage_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryVoltage_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryVoltage_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_3" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_3" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_status" parameterTypeRef="uint_16" />
+            <Parameter name="BAT_lastError" parameterTypeRef="uint_8" />
+            <Parameter name="EPS_status_0" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_status_1" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_lastError_0" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_lastError_1" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_switchVoltages_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_3" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_4" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_5" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_6" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_7" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_8" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_9" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_3" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_4" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_5" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_6" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_7" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_8" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_9" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_expectedSwitchStatesBitmap" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_boardTemperatures_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_boardTemperatures_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_3" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_3" parameterTypeRef="uint_10" />
+            <Parameter name="CMC_rxLock" parameterTypeRef="bool" />
+            <Parameter name="CMC_rxFrameCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxPacketCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxDroppedErrorCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxCrcErrorCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxOverrunErrorCount" parameterTypeRef="uint_8" />
+            <Parameter name="CMC_rxProtocolErrorCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_temperatureSmps" parameterTypeRef="int_8" />
+            <Parameter name="CMC_temperaturePa" parameterTypeRef="uint_8" />
+            
         </ParameterSet>
         <ContainerSet>
-            <SequenceContainer name="BAT">
+            <SequenceContainer name="Beacon">
                 <EntryList>
-                    <ParameterRefEntry parameterRef="BAT.BatteryCurrentDir">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>0</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="BAT.BatteryCurrent">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>1</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="BAT.BatteryVoltage">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>11</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="BAT.BoardTemperature">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>21</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="BAT.BatteryHeaterStatus">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>31</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="BAT.status">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>41</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="BAT.LastError">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>57</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                </EntryList>
-            </SequenceContainer>
-            <SequenceContainer name="COMMS">
-                <EntryList>
-                    <ParameterRefEntry parameterRef="CMC.txPacketCount">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>65</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.rxRssi">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>81</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.rxFrameCount">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>93</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.rxPacketCount">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>109</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.temperatureSmps">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>125</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.temperaturePa">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>133</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.voltage3V3">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>141</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.voltage5V">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>154</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.current3V3">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>167</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.current5V">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>183</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="CMC.paReversePower">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>199</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="ISIS.status">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>211</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="ISIS.temperature">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>214</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="STX.status">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>224</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="STX.rfOutputPower">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>226</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="STX.powerAmplifierCurrent">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>238</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="STX.powerAmplifierVoltage">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>254</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="STX.boardTemperature">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>266</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="STX.batteryCurrent">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>278</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="STX.batteryVoltage">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>294</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                </EntryList>
-            </SequenceContainer>
-            <SequenceContainer name="EPS">
-                <EntryList>
-                    <ParameterRefEntry parameterRef="EPS.actualSwitchStatesBitmap">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>306</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.BcrOutputCurrent">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>316</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.BcrOutputVoltage">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>326</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.busVoltages">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>336</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.busCurrents">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>346</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.switchVoltages">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>356</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.switchVoltages">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>366</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.boardTemperatures">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>376</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.solarArrayVoltages">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>386</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
-                    <ParameterRefEntry parameterRef="EPS.solarArrayCurrents">
-                        <LocationInContainerInBits referenceLocation="containerStart">
-                            <FixedValue>396</FixedValue>
-                        </LocationInContainerInBits>
-                    </ParameterRefEntry>
+                    <ParameterRefEntry parameterRef="OBC_currBootImage" />
+                    <ParameterRefEntry parameterRef="ModeManager_mode" />
+                    <ParameterRefEntry parameterRef="OBT_uptime" />
+                    <ParameterRefEntry parameterRef="BAT_batteryCurrentDir" />
+                    <ParameterRefEntry parameterRef="BAT_batteryCurrent_0" />
+                    <ParameterRefEntry parameterRef="BAT_batteryCurrent_1" />
+                    <ParameterRefEntry parameterRef="BAT_batteryCurrent_2" />
+                    <ParameterRefEntry parameterRef="BAT_batteryVoltage_0"  />
+                    <ParameterRefEntry parameterRef="BAT_batteryVoltage_1"  />
+                    <ParameterRefEntry parameterRef="BAT_batteryVoltage_2"  />
+                    <ParameterRefEntry parameterRef="BAT_batteryTemperature_0" />
+                    <ParameterRefEntry parameterRef="BAT_batteryTemperature_1" />
+                    <ParameterRefEntry parameterRef="BAT_batteryTemperature_2" />
+                    <ParameterRefEntry parameterRef="BAT_batteryTemperature_3" />
+                    <ParameterRefEntry parameterRef="BAT_batteryHeaterStatus_0" />
+                    <ParameterRefEntry parameterRef="BAT_batteryHeaterStatus_1" />
+                    <ParameterRefEntry parameterRef="BAT_batteryHeaterStatus_2" />
+                    <ParameterRefEntry parameterRef="BAT_batteryHeaterStatus_3" />
+                    <ParameterRefEntry parameterRef="BAT_status" />
+                    <ParameterRefEntry parameterRef="BAT_lastError" />
+                    <ParameterRefEntry parameterRef="EPS_status_0" />
+                    <ParameterRefEntry parameterRef="EPS_status_1" />
+                    <ParameterRefEntry parameterRef="EPS_lastError_0" />
+                    <ParameterRefEntry parameterRef="EPS_lastError_1" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_0" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_1" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_2" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_3" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_4" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_5" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_6" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_7" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_8" />
+                    <ParameterRefEntry parameterRef="EPS_switchVoltages_9" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_0" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_1" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_2" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_3" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_4" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_5" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_6" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_7" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_8" />
+                    <ParameterRefEntry parameterRef="EPS_switchCurrents_9" />
+                    <ParameterRefEntry parameterRef="EPS_expectedSwitchStatesBitmap" />
+                    <ParameterRefEntry parameterRef="EPS_boardTemperatures_0" />
+                    <ParameterRefEntry parameterRef="EPS_boardTemperatures_1" />
+                    <ParameterRefEntry parameterRef="EPS_busVoltages_0" />
+                    <ParameterRefEntry parameterRef="EPS_busVoltages_1" />
+                    <ParameterRefEntry parameterRef="EPS_busVoltages_2" />
+                    <ParameterRefEntry parameterRef="EPS_busVoltages_3" />
+                    <ParameterRefEntry parameterRef="EPS_busCurrents_0" />
+                    <ParameterRefEntry parameterRef="EPS_busCurrents_1" />
+                    <ParameterRefEntry parameterRef="EPS_busCurrents_2" />
+                    <ParameterRefEntry parameterRef="EPS_busCurrents_3" />
+                    <ParameterRefEntry parameterRef="CMC_rxLock" />
+                    <ParameterRefEntry parameterRef="CMC_rxFrameCount" />
+                    <ParameterRefEntry parameterRef="CMC_rxPacketCount" />
+                    <ParameterRefEntry parameterRef="CMC_rxDroppedErrorCount" />
+                    <ParameterRefEntry parameterRef="CMC_rxCrcErrorCount" />
+                    <ParameterRefEntry parameterRef="CMC_rxOverrunErrorCount" />
+                    <ParameterRefEntry parameterRef="CMC_rxProtocolErrorCount" />
+                    <ParameterRefEntry parameterRef="CMC_temperatureSmps" />
+                    <ParameterRefEntry parameterRef="CMC_temperaturePa" />
                 </EntryList>
             </SequenceContainer>
         </ContainerSet>

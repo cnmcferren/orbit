@@ -10,7 +10,7 @@ dataDir: yamcs-data
 
 instances:
   - SPOC
-  - MOCI
+
 
 # Secret key unique to a particular Yamcs installation.
 # This is used to provide cryptographic signing.
