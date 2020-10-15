@@ -21,6 +21,17 @@ public class SPOCPacketPreprocessor extends AbstractPacketPreprocessor {
     @Override
     public TmPacket process(TmPacket packet) {
         // TODO: Packet preprocessing, checksum, etc
+        // Our custom packets don't include a secundary header with time information.
+        
+        byte[] bytes = packet.getPacket();
+        int apidseqcount = ByteBuffer.wrap(bytes).getInt(0);
+        
+        // Use Yamcs-local time instead.
+        packet.setGenerationTime(TimeEncoding.getWallclockTime());
+        // Use the full 32-bits, so that both APID and the count are included.
+        // Yamcs uses this attribute to uniquely identify the packet (together with the gentime)
+        packet.setSequenceCount(apidseqcount);
+
         return packet;
     }
 }
