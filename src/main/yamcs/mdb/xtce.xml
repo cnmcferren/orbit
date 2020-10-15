@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.omg.org/spec/XTCE/20180204 https://www.omg.org/spec/XTCE/20180204/SpaceSystem.xsd">
     <TelemetryMetaData>
         <ParameterTypeSet>
-            <BooleanParameterType name="bool" zeroStringValue="False" oneStringValue="True">
+            <BooleanParameterType name="bool" zeroStringValue="false" oneStringValue="true">
                 <UnitSet/>
                 <IntegerDataEncoding sizeInBits="1" />
             </BooleanParameterType>
@@ -97,7 +97,7 @@
             <Parameter name="CMC_rxOverrunErrorCount" parameterTypeRef="uint_8" />
             <Parameter name="CMC_rxProtocolErrorCount" parameterTypeRef="uint_16" />
             <Parameter name="CMC_temperatureSmps" parameterTypeRef="int_8" />
-            <Parameter name="CMC_temperaturePa" parameterTypeRef="uint_8" />
+            <Parameter name="CMC_temperaturePa" parameterTypeRef="int_8" />
             
         </ParameterSet>
         <ContainerSet>
