@@ -34,6 +34,7 @@
             </IntegerParameterType>
         </ParameterTypeSet>
         <ParameterSet>
+<<<<<<< HEAD
             <Parameter name="OBC_currBootImage" parameterTypeRef="uint_8" shortDescription="The index of the currently executing software image." />
             <Parameter name="ModeManager_mode" parameterTypeRef="uint_3" shortDescription="This is the current software defined mode of the satellite." />
             <Parameter name="OBT_uptime" parameterTypeRef="uint_32" shortDescription="The uptime since reboot or reset." />
@@ -98,6 +99,72 @@
             <Parameter name="CMC_rxProtocolErrorCount" parameterTypeRef="uint_16" shortDescription="The number of receive protocol errors that have occurred." />
             <Parameter name="CMC_temperatureSmps" parameterTypeRef="int_8" shortDescription="The temperature measured at the CMC switched-mode power supply." />
             <Parameter name="CMC_temperaturePa" parameterTypeRef="int_8" shortDescription="The temperature measured at the CMC power amplifier." />
+=======
+            <Parameter name="OBC_currBootImage" parameterTypeRef="uint_8" />
+            <Parameter name="ModeManager_mode" parameterTypeRef="uint_3" />
+            <Parameter name="OBT_uptime" parameterTypeRef="uint_32" />
+            <Parameter name="BAT_batteryCurrentDir" parameterTypeRef="bool" />
+            <Parameter name="BAT_batteryCurrent_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryCurrent_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryCurrent_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryVoltage_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryVoltage_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryVoltage_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryTemperature_3" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_0" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_1" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_2" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_batteryHeaterStatus_3" parameterTypeRef="uint_10" />
+            <Parameter name="BAT_status" parameterTypeRef="uint_16" />
+            <Parameter name="BAT_lastError" parameterTypeRef="uint_8" />
+            <Parameter name="EPS_status_0" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_status_1" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_lastError_0" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_lastError_1" parameterTypeRef="uint_16" />
+            <Parameter name="EPS_switchVoltages_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_3" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_4" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_5" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_6" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_7" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_8" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchVoltages_9" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_3" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_4" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_5" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_6" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_7" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_8" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_switchCurrents_9" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_expectedSwitchStatesBitmap" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_boardTemperatures_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_boardTemperatures_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busVoltages_3" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_0" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_1" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_2" parameterTypeRef="uint_10" />
+            <Parameter name="EPS_busCurrents_3" parameterTypeRef="uint_10" />
+            <Parameter name="CMC_rxLock" parameterTypeRef="bool" />
+            <Parameter name="CMC_rxFrameCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxPacketCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxDroppedErrorCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxCrcErrorCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_rxOverrunErrorCount" parameterTypeRef="uint_8" />
+            <Parameter name="CMC_rxProtocolErrorCount" parameterTypeRef="uint_16" />
+            <Parameter name="CMC_temperatureSmps" parameterTypeRef="int_8" />
+            <Parameter name="CMC_temperaturePa" parameterTypeRef="int_8" />
+>>>>>>> master
             
         </ParameterSet>
         <ContainerSet>

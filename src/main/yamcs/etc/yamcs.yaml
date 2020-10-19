@@ -1,7 +1,7 @@
 services:
   - class: org.yamcs.http.HttpServer
     args:
-      port: 8090
+      port: 8080
 
 # This is where Yamcs will persist its data. Paths are resolved relative to where Yamcs is running
 # from (by default: target/yamcs). This means that `mvn clean` will remove also persisted data.
@@ -10,7 +10,9 @@ dataDir: yamcs-data
 
 instances:
   - SPOC
+  - MOCI
+
 
 # Secret key unique to a particular Yamcs installation.
 # This is used to provide cryptographic signing.
-secretKey: changeme
+secretKey: tacobell;
