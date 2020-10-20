@@ -1,4 +1,4 @@
-![SSRL Logo](docs/logo.png)
+![SSRL Logo](docs/logo.jpg)
 
 Orbit Mission Control Software
 ===
