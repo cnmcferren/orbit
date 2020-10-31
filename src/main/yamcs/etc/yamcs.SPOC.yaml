@@ -37,9 +37,9 @@ dataLinks:
 mdb:
   # Configuration of the active loaders
   # Valid loaders are: sheet, xtce or fully qualified name of the class
-  - type: xtce
+  - type: sheet
     args:
-      file: mdb/xtce.xml
+      file: mdb/xtce.xls
 
 # Configuration for streams created at server startup
 streamConfig:
